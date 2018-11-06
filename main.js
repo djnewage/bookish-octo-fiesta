@@ -56,5 +56,7 @@ let todos = [
 ];
 
 for (var i = 0; i < todos.length; i++){
-    console.log(todos.length);
+    console.log(todos[i]);
 }
+
+
