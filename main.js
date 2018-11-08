@@ -59,4 +59,11 @@ for (var i = 0; i < todos.length; i++){
     console.log(todos[i]);
 }
 
+ document.getElementById(id).innerHTML = player;
+    if (player === 'x'){
+        player = 'o';
+    }else{
+        player ='x';
+    }
+
 
