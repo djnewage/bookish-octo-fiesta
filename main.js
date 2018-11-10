@@ -67,3 +67,26 @@ for (var i = 0; i < todos.length; i++){
     }
 
 
+let todos = ['item1', 'item2','item3', 'item4'];
+
+function displayTodos(){
+    console.log(todos);
+}
+
+function addTodos(todo){
+    todos.push(todo);
+    displayTodos();
+
+}
+
+function changeTodos(index, newValue){
+    todos[index] = newValue;
+    displayTodos();
+}
+
+function deleteTodos(item){
+    todos.splice(item, 1);
+    displayTodos()
+}
+
+
