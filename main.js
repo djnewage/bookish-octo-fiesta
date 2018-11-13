@@ -90,3 +90,40 @@ function deleteTodos(item){
 }
 
 
+
+import React, { Component } from 'react'
+import './App.css'
+import axios from 'axios'
+
+class App extends Component {
+  state = {
+    list: []
+  }
+  componentDidMount() {
+    const APIKEY = '6968887b125622478544fb025f75040f'
+    axios({
+      method: 'get',
+      baseURL: 'http://api.openweathermap.org/data/2.5',
+      url: '/forecast',
+      params: {
+        id: '524901',
+        APPID: APIKEY
+      }
+    }).then(res =>
+      this.setState({
+        list: res.data.list
+      })
+    )
+  }
+  render() {
+    return (
+      <div className="App">
+        {this.state.list.map((item, i) => (
+          <li key={i}>{item.main.temp}</li>
+        ))}
+      </div>
+    )
+  }
+}
+
+export default App
