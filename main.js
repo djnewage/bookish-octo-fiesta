@@ -1,32 +1,40 @@
-// let todoList = {
-//   todos: [],
-//   displayTodos: function () {
-//     console.log('My Todos:');
-//     for (i = 0; i < this.todos.length; i++){
-//       console.log(this.todos[i].todoText);
-//     };
-//   },
-//   addTodos: function (todoText) {
-//     this.todos.push({
-//       todoText: todoText,
-//       completed: false
-//     });
-//     this.displayTodos();
-//   },
-//   changeTodos: function (position, todoText) {
-//     this.todos[position].todoText = todoText;
-//     this.displayTodos();
-//   },
-//   deleteTodos: function (index) {
-//     this.todos.splice[index,1];
-//     this.displayTodos();
-//   },
-//   toggleCompleted: function () {
-//     let todo = this.todos[position];
-//     todos.completed = !todo.completed;
-//     this.displayTodos();
-//   }
-// };
+let todoList = {
+  todos: [],
+  displayTodos: function () {
+  if (this.todos.length === 0){
+      console.log('your todo is empty');
+    }else{
+      console.log('My Todos:');
+      for (i = 0; i < this.todos.length; i++){
+        if(this.todos[i].completed === true){
+          console.log('(x)',this.todos[i].todoText);
+        }else{
+          console.log('( )',this.todos[i].todoText);
+        }
+      }
+    }
+  },
+  addTodos: function (todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodos: function (position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodos: function (index) {
+    this.todos.splice(index,1);
+    this.displayTodos();
+  },
+  toggleCompleted: function (position) {
+    let todos = this.todos[position];
+    todos.completed = !todos.completed;
+    this.displayTodos();
+  }
+};
 
 
 
